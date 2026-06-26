@@ -8,8 +8,8 @@ RUN VERSION=$(curl -s https://api.papermc.io/v2/projects/velocity | jq -r '.vers
     BUILD=$(curl -s https://api.papermc.io/v2/projects/velocity/versions/$VERSION | jq -r '.builds[-1]') && \
     wget -O velocity.jar https://api.papermc.io/v2/projects/velocity/versions/$VERSION/builds/$BUILD/downloads/velocity-$VERSION-$BUILD.jar
 
-RUN mkdir -p /app
+COPY velocity.toml /app/velocity.toml
 
 EXPOSE 8080
 
-CMD ["sh", "-c", "java -Xmx512M -jar velocity.jar"]
+CMD ["java", "-Xmx512M", "-jar", "velocity.jar"]
