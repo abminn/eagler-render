@@ -1,0 +1,9 @@
+bind = "0.0.0.0:8080"
+
+motd = "Eaglercraft Proxy"
+
+show-max-players = 500
+
+online-mode = false
+
+player-info-forwarding-mode = "NONE"
