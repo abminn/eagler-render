@@ -1,5 +1,5 @@
 services:
-  - type: web
+  - type: pserv
     name: eagler-proxy
     plan: free
     env: docker
